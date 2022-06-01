@@ -4,7 +4,7 @@ import Head from 'next/head'
 const AppHead: React.FC<{ title: string }> = ({ title }) => {
     return (
         <Head>
-            <title>{title} - APIT</title>
+            <title>APIT - {title}</title>
         </Head>
     )
 }

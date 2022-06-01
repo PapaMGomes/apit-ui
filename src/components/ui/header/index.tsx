@@ -1,11 +1,19 @@
 import React from 'react'
-import { Container, Nav, Content } from './styles'
+import FixedMenu from '../menu/fixed-menu'
+import Logo from '@/assets/images/logo.png'
+import { Container, Nav, Content, ImageContainer, Image } from './styles'
 
 const Header: React.FC = () => {
     return (
         <Container>
             <Nav>
-                <Content>Header</Content>
+                <Content>
+                    <ImageContainer>
+                        <Image src={Logo} alt="APIT Jovem Aprendiz" />
+                    </ImageContainer>
+
+                    <FixedMenu />
+                </Content>
             </Nav>
         </Container>
     )

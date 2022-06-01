@@ -1,15 +1,21 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
-import { AppContainer } from '@/styles/css/components'
+import About from '@/components/home/about'
+import Partners from '@/components/home/partners'
+import Spotlight from '@/components/home/spotlight'
+import Principles from '@/components/home/principles'
+import Differentials from '@/components/home/differentials'
 
 const Home: React.FC = () => {
     return (
         <>
             <AppHead title="Home" />
 
-            <AppContainer>
-                <div style={{ height: '110vh' }}>Home Page</div>
-            </AppContainer>
+            <Spotlight />
+            <About />
+            <Principles />
+            <Differentials />
+            <Partners />
         </>
     )
 }

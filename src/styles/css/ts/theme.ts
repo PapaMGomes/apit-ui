@@ -1,29 +1,45 @@
+import { rgba } from 'polished'
+
+const menuHeight = 40
 const headerHeight = 100
-const footerHeight = 170
+const footerHeight = 230
 
 const colors = {
     text: '#111827',
-    gray: '#8F8F8F',
+    red: '#C62D24',
+    gray: '#d1cdcd',
+    blue: '#2774AC',
+    green: '#84C63F',
+    yellow: '#FAB713',
+    orange: '#EB842A',
+    purple: '#862260',
     danger: '#B03525',
-    primary: '#5558CA',
-    warning: '#D3CE27',
-    success: '#7ED321',
-    secondary: '#C837AB',
+    primary: '#2774AC',
+    secondary: '#F06828',
     bgPrimary: '#fafafa',
-    bgSecondary: '#e1d9d9'
+    bgSecondary: '#d9d9d9'
+}
+
+const glass = {
+    glassPrimary: rgba(colors.primary, 0.2)
+}
+
+const gradient = {
+    gradient: `radial-gradient(circle, #D0DFEA 15%, #D0DFEA 100%);`
 }
 
 const sizes = {
+    menuHeight: `${menuHeight}px`,
     headerHeight: `${headerHeight}px`,
-    footerHeight: `${footerHeight}px`,
-    paddingTopContainer: `calc(${headerHeight}px + 26px)`
+    footerHeight: `${footerHeight}px`
 }
 
 const theme = {
     sizes,
     colors: {
         ...colors,
-        gradient: `linear-gradient(252.78deg, ${colors.primary} 20.97%, ${colors.secondary} 76.04%)`
+        ...glass,
+        ...gradient
     }
 }
 
