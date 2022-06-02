@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CourseInterface } from '@/interfaces/course'
 import BgRetail from '@/assets/images/program/retail.jpg'
 import BgLogistics from '@/assets/images/program/logistics.jpg'
@@ -14,8 +14,12 @@ import {
     Button,
     ImageContainer
 } from './styles'
+import ModalCourseDetail from '../modal-course-detail'
 
 const Courses: React.FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [course, setCourse] = useState<CourseInterface>({} as CourseInterface)
+
     const courses: CourseInterface[] = [
         {
             image: BgManagement,
@@ -31,25 +35,38 @@ const Courses: React.FC = () => {
         }
     ]
 
+    const selectCourse = (course: CourseInterface) => {
+        setCourse(course)
+        setIsModalOpen(true)
+    }
+
     return (
-        <Container>
-            <Title>Cursos</Title>
+        <>
+            <Container>
+                <Title>Cursos</Title>
 
-            <Content>
-                {courses.map((item, index) => (
-                    <Card key={index}>
-                        <ImageContainer>
-                            <Image src={item.image} alt={item.title} />
-                        </ImageContainer>
+                <Content>
+                    {courses.map((item, index) => (
+                        <Card key={index} onClick={() => selectCourse(item)}>
+                            <ImageContainer>
+                                <Image src={item.image} alt={item.title} />
+                            </ImageContainer>
 
-                        <CardBody>
-                            <CardTitle>{item.title}</CardTitle>
-                            <Button>Ver mais</Button>
-                        </CardBody>
-                    </Card>
-                ))}
-            </Content>
-        </Container>
+                            <CardBody>
+                                <CardTitle>{item.title}</CardTitle>
+                                <Button>Ver mais</Button>
+                            </CardBody>
+                        </Card>
+                    ))}
+                </Content>
+            </Container>
+
+            <ModalCourseDetail
+                course={course}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
+        </>
     )
 }
 
