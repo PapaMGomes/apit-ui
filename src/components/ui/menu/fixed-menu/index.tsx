@@ -1,16 +1,17 @@
 import React from 'react'
 import { MENU_ITEMS } from '../_data'
+import { useRouter } from 'next/router'
 import { BsChevronCompactDown } from 'react-icons/bs'
 import { Container, Article, Title, Group, Item } from './styles'
-import { useRouter } from 'next/router'
 
 const FixedMenu: React.FC = () => {
     const router = useRouter()
 
-    const isActive = (path: string) => {
-        if (router.pathname === '/') return router.pathname === path
+    const isActive = (path: string) => router.pathname === path
 
-        return router.pathname.startsWith(path)
+    const goTo = (path: string) => {
+        if (isActive(path)) return
+        else router.push(path)
     }
 
     const renderGroup = (childrenL: any[]) => {
@@ -31,6 +32,7 @@ const FixedMenu: React.FC = () => {
                 <Article key={index}>
                     <Title
                         color={item.color}
+                        onClick={() => goTo(item.route)}
                         showIcon={!!item.children.length}
                         className={isActive(item.route) ? 'active' : ''}
                     >

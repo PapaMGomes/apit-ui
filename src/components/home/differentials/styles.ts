@@ -9,7 +9,7 @@ export const Content = styled.section`
 `
 
 export const Title = styled.h3`
-    ${tw`text-lg font-bold mb-4`}
+    ${tw`text-lg font-bold mb-4 uppercase `}
     color: ${({ theme }) => theme.colors.blue};
 `
 

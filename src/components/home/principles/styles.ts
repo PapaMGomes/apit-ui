@@ -4,7 +4,7 @@ import { AppContainer } from '@/styles/css/components'
 
 export const Section = styled.section`
     ${tw`my-8 py-12`}
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.purple};
 `
 
 export const Container = styled(AppContainer)``

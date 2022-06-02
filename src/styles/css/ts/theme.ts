@@ -5,7 +5,7 @@ const headerHeight = 100
 const footerHeight = 230
 
 const colors = {
-    text: '#111827',
+    text: '#656668',
     red: '#C62D24',
     gray: '#d1cdcd',
     blue: '#2774AC',

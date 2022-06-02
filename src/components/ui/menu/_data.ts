@@ -4,47 +4,43 @@ export const MENU_ITEMS = [
     {
         name: 'Quem Somos',
         route: '/',
-        color: Theme.colors.purple,
-        children: [
-            // { name: 'Missão, Visão e Valores', route: '' },
-            // { name: 'Nossos Diferenciais', route: '' },
-            // { name: 'Parceiros', route: '' }
-        ]
-    },
-    {
-        name: 'Programas',
-        route: '',
-        color: Theme.colors.red,
-        children: []
-    },
-    {
-        name: 'Como Participar',
-        route: '',
         color: Theme.colors.blue,
         children: []
     },
     {
-        name: 'Aprendiz',
-        route: '',
+        name: 'Programas',
+        route: '/program',
         color: Theme.colors.green,
         children: []
     },
     {
-        name: 'Empresas',
-        route: '',
+        name: 'Como Participar',
+        route: '/how-participate',
         color: Theme.colors.yellow,
         children: []
     },
     {
-        name: 'Eventos',
-        route: '',
+        name: 'Aprendiz',
+        route: '/apprentice',
         color: Theme.colors.orange,
         children: []
     },
     {
-        name: 'Contato',
-        route: '',
+        name: 'Empresas',
+        route: '/company',
+        color: Theme.colors.red,
+        children: []
+    },
+    {
+        name: 'Eventos',
+        route: '/event',
         color: Theme.colors.purple,
+        children: []
+    },
+    {
+        name: 'Contato',
+        route: '/contact',
+        color: Theme.colors.blue,
         children: []
     }
 ]

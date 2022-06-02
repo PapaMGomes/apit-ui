@@ -1,6 +1,7 @@
 import { AppButton } from './appButton'
+import { AppFormGroup } from './appForm'
 import { AppContainer } from './appContainer'
 import { AppSeparator } from './appSeparator'
-import { AppFormGroup } from './appForm'
+import { AppPageContainer } from './appPageContainer'
 
-export { AppButton, AppContainer, AppSeparator, AppFormGroup }
+export { AppButton, AppContainer, AppSeparator, AppFormGroup, AppPageContainer }

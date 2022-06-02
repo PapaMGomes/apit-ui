@@ -35,7 +35,7 @@ export const SocialMediaContainer = styled.div`
 
 export const SocialMediaItem = styled.i`
     ${tw`w-10 h-10 mx-2 text-lg rounded-full flex items-center justify-center cursor-pointer transition-transform duration-700`}
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.orange};
     color: ${({ theme }) => theme.colors.bgPrimary};
 
     &:hover {

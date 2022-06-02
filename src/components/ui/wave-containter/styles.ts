@@ -1,5 +1,10 @@
+import { rgba } from 'polished'
 import styled from 'styled-components'
 import tw from 'twin.macro'
+
+interface WavesContainterProps {
+    color?: string
+}
 
 export const Container = styled.section`
     ${tw`relative overflow-hidden  w-full flex justify-center items-center`}
@@ -21,9 +26,10 @@ export const Container = styled.section`
     }
 `
 
-export const WavesContainter = styled.article`
+export const WavesContainter = styled.article<WavesContainterProps>`
     ${tw`absolute left-0 w-full h-full`}
-    background: ${({ theme }) => theme.colors.glassPrimary};
+    background: ${({ theme, color }) =>
+        color ? rgba(color, 0.2) : theme.colors.glassPrimary};
 `
 
 export const Wave = styled.span`
@@ -32,24 +38,28 @@ export const Wave = styled.span`
     width: 100%;
     height: 70vh;
     transform: translate(10%, -75%);
-    background: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme, color }) =>
+        color ? rgba(color, 0.2) : theme.colors.primary};
 
     &:nth-child(1) {
         border-radius: 45%;
-        background: ${({ theme }) => theme.colors.glassPrimary};
+        background: ${({ theme, color }) =>
+            color ? rgba(color, 0.2) : theme.colors.glassPrimary};
         animation: animate 10s linear infinite;
     }
 
     &:nth-child(2) {
         border-radius: 40%;
         animation: animate 12s linear infinite;
-        background: ${({ theme }) => theme.colors.glassPrimary};
+        background: ${({ theme, color }) =>
+            color ? rgba(color, 0.2) : theme.colors.glassPrimary};
     }
 
     &:nth-child(3) {
         border-radius: 0% 0% 77% 0%;
         animation: animate 15s linear infinite;
-        background: ${({ theme }) => theme.colors.glassPrimary};
+        background: ${({ theme, color }) =>
+            color ? rgba(color, 0.2) : theme.colors.glassPrimary};
     }
 `
 

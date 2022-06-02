@@ -41,7 +41,10 @@ const Footer: React.FC = () => {
 
     return (
         <Container>
-            <WaveContainter height={Theme.sizes.footerHeight}>
+            <WaveContainter
+                color={Theme.colors.orange}
+                height={Theme.sizes.footerHeight}
+            >
                 <Content>
                     <Section>
                         <Article>

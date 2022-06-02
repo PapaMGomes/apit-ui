@@ -5,17 +5,18 @@ interface WaveContainterProps {
     children: React.ReactNode
     height?: string | number
     containerClass?: string
+    color?: string
 }
 
 const WaveContainter: React.FC<WaveContainterProps> = props => {
-    const { children, height, containerClass } = props
+    const { children, height, color, containerClass } = props
 
     return (
         <Container style={{ height }} className={containerClass}>
-            <WavesContainter>
-                <Wave></Wave>
-                <Wave></Wave>
-                <Wave></Wave>
+            <WavesContainter color={color}>
+                <Wave color={color}></Wave>
+                <Wave color={color}></Wave>
+                <Wave color={color}></Wave>
             </WavesContainter>
 
             <Content>{children}</Content>
