@@ -14,6 +14,7 @@ import {
 const AppModal: React.FC<AppModalInterface> = props => {
     const backdropEl = useRef(null)
     const {
+        color,
         width,
         isOpen,
         height,
@@ -55,12 +56,13 @@ const AppModal: React.FC<AppModalInterface> = props => {
                         }}
                     >
                         {header && <ModalHeader>{header}</ModalHeader>}
-                        <ModalBody>{children}</ModalBody>
+                        <ModalBody color={color}>{children}</ModalBody>
                         {footer && <ModalFooter>{footer}</ModalFooter>}
                     </ModalContainer>
 
                     {onClickClose && (
-                        <Button onClick={() => onClickClose()}>
+                        <Button color={color} onClick={() => onClickClose()}>
+                            Fechar
                             <MdClose />
                         </Button>
                     )}

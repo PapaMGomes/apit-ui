@@ -23,4 +23,22 @@ export default createGlobalStyle`
   #__next {
       height: 100vh;
   }
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: ${({ theme }) => theme.colors.primary} #c9c5c5;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #c9c5c5;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border: 0px solid #ffffff;
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
 `

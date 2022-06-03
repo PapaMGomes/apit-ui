@@ -13,4 +13,5 @@ export interface AppModalInterface {
     onClose?: Function
     children?: ReactNode
     containerStyle?: any
+    color?: string
 }
