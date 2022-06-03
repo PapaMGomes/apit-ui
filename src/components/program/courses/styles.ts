@@ -15,7 +15,11 @@ export const Content = styled.article`
     ${tw`grid gap-5 grid-cols-5 sm:grid-cols-2`}
 `
 
-export const Card = styled.div`
+interface CardProps {
+    color: string
+}
+
+export const Card = styled.div<CardProps>`
     ${tw`h-56 shadow-lg rounded-lg cursor-pointer`}
 
     &:hover {
@@ -30,7 +34,7 @@ export const Card = styled.div`
 
             > button {
                 ${tw`font-bold`}
-                color: ${({ theme }) => theme.colors.blue};
+                color: ${({ color }) => color};
             }
         }
     }

@@ -27,7 +27,7 @@ export const ModalContainer = styled.article.attrs(animationIn)`
 export const ModalHeader = styled.div``
 
 export const ModalBody = styled.div<CommonProps>`
-    ${tw`flex-auto overflow-y-auto`}
+    ${tw`flex-auto overflow-y-auto overflow-x-hidden`}
 
     ::-webkit-scrollbar-thumb {
         border: 0px solid #ffffff;

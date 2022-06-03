@@ -30,5 +30,10 @@ export const Subtitle = styled.p`
 `
 
 export const Body = styled.section`
-    ${tw`px-5 py-3 grid grid-cols-2 gap-7`}
+    ${tw`px-5 py-3 grid grid-cols-2 gap-7 sm:flex sm:overflow-x-auto`}
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        ${tw`hidden`}
+    }
 `

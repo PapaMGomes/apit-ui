@@ -1,5 +1,7 @@
 export class ThemeService {
-    private rootStyle = document.documentElement.style
+    private get rootStyle() {
+        return document.documentElement.style
+    }
 
     get footerColor() {
         return this.rootStyle.getPropertyValue('--footer-color')

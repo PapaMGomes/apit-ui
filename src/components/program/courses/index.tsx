@@ -93,7 +93,7 @@ const Courses: React.FC = () => {
         {
             image: BgRetail,
             title: 'Varejo',
-            color: Theme.colors.purple,
+            color: Theme.colors.orange,
             basic: [
                 { title: 'Português e Redação Comercia', workload: 46 },
                 {
@@ -126,7 +126,11 @@ const Courses: React.FC = () => {
 
                 <Content>
                     {courses.map((item, index) => (
-                        <Card key={index} onClick={() => selectCourse(item)}>
+                        <Card
+                            key={index}
+                            color={item.color}
+                            onClick={() => selectCourse(item)}
+                        >
                             <ImageContainer>
                                 <Image src={item.image} alt={item.title} />
                             </ImageContainer>

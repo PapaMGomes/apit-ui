@@ -35,7 +35,7 @@ export default createGlobalStyle`
   }
 
   *::-webkit-scrollbar {
-    width: 10px;
+    ${tw`w-2.5 sm:w-1`}
   }
 
   *::-webkit-scrollbar-track {
@@ -43,7 +43,8 @@ export default createGlobalStyle`
   }
 
   *::-webkit-scrollbar-thumb {
-    border: 0px solid #ffffff;
+    ${tw`w-2.5 sm:w-1`}
     background-color: var(--scrollbar-color);
+    border: 1px solid ${({ theme }) => theme.colors.bgPrimary};
   }
 `

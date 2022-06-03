@@ -13,7 +13,8 @@ export const Title = styled.p<TitleProps>`
 `
 
 export const Content = styled.article`
-    ${tw`grid gap-3 grid-rows-6`}
+    ${tw`grid gap-3 sm:w-[70vw]`}
+    scroll-snap-align: center;
 `
 
 export const Card = styled.div`
