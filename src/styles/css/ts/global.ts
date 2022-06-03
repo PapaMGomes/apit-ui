@@ -3,6 +3,11 @@ import tw from 'twin.macro'
 import 'animate.css'
 
 export default createGlobalStyle`
+  :root {
+    --scrollbar-color: ${({ theme }) => theme.colors.primary};
+    --footer-color: ${({ theme }) => theme.colors.orange}
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -39,6 +44,6 @@ export default createGlobalStyle`
 
   *::-webkit-scrollbar-thumb {
     border: 0px solid #ffffff;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: var(--scrollbar-color);
   }
 `

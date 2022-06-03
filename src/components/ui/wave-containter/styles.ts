@@ -27,13 +27,13 @@ export const Container = styled.section`
 `
 
 export const WavesContainter = styled.article<WavesContainterProps>`
-    ${tw`absolute left-0 w-full h-full`}
+    ${tw`absolute left-0 w-full h-full transition-all`}
     background: ${({ theme, color }) =>
         color ? rgba(color, 0.2) : theme.colors.glassPrimary};
 `
 
 export const Wave = styled.span`
-    ${tw`absolute top-0 left-2/4`}
+    ${tw`absolute top-0 left-2/4 transition-all`}
 
     width: 100%;
     height: 70vh;
@@ -64,5 +64,5 @@ export const Wave = styled.span`
 `
 
 export const Content = styled.section`
-    ${tw`w-full h-full py-2 z-10`}
+    ${tw`w-full h-full py-2 z-10 transition-all`}
 `

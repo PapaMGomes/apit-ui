@@ -31,7 +31,7 @@ const FixedMenu: React.FC = () => {
             {MENU_ITEMS.map((item, index) => (
                 <Article key={index}>
                     <Title
-                        color={item.color}
+                        color={item.theme.color}
                         onClick={() => goTo(item.route)}
                         showIcon={!!item.children.length}
                         className={isActive(item.route) ? 'active' : ''}

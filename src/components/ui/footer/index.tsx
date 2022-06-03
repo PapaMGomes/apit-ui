@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Theme from '@/styles/css/ts/theme'
 import Logo from '@/assets/images/logo.png'
 import { FiLinkedin } from 'react-icons/fi'
@@ -15,8 +15,18 @@ import {
     SocialMediaContainer
 } from './styles'
 import { format } from 'date-fns'
+import { ThemeService } from '@/services/_theme.service'
+import { useRouter } from 'next/router'
 
 const Footer: React.FC = () => {
+    const router = useRouter()
+    const [footerColor, setFooterColor] = useState(Theme.colors.orange)
+    const themeService = new ThemeService()
+
+    useEffect(() => {
+        setTimeout(() => setFooterColor(themeService.footerColor), 250)
+    }, [router.pathname])
+
     const socialMedia = [
         {
             title: 'Facebook',
@@ -42,7 +52,7 @@ const Footer: React.FC = () => {
     return (
         <Container>
             <WaveContainter
-                color={Theme.colors.orange}
+                color={footerColor}
                 height={Theme.sizes.footerHeight}
             >
                 <Content>

@@ -1,46 +1,53 @@
-import Theme from '@/styles/css/ts/theme'
+import { THEME_CONFIG } from '@/config/theme.config'
 
 export const MENU_ITEMS = [
     {
+        id: 'home',
         name: 'Quem Somos',
         route: '/',
-        color: Theme.colors.blue,
+        theme: THEME_CONFIG.home,
         children: []
     },
     {
+        id: 'program',
         name: 'Programas',
         route: '/program',
-        color: Theme.colors.green,
+        theme: THEME_CONFIG.program,
         children: []
     },
     {
+        id: 'howParticipate',
         name: 'Como Participar',
         route: '/how-participate',
-        color: Theme.colors.yellow,
+        theme: THEME_CONFIG.howParticipate,
         children: []
     },
     {
+        id: 'apprentice',
         name: 'Aprendiz',
         route: '/apprentice',
-        color: Theme.colors.orange,
+        theme: THEME_CONFIG.apprentice,
         children: []
     },
     {
+        id: 'company',
         name: 'Empresas',
         route: '/company',
-        color: Theme.colors.red,
+        theme: THEME_CONFIG.company,
         children: []
     },
     {
+        id: 'event',
         name: 'Eventos',
         route: '/event',
-        color: Theme.colors.purple,
+        theme: THEME_CONFIG.event,
         children: []
     },
     {
+        id: 'contact',
         name: 'Contato',
         route: '/contact',
-        color: Theme.colors.blue,
+        theme: THEME_CONFIG.contact,
         children: []
     }
 ]
