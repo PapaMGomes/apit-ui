@@ -10,7 +10,11 @@ interface TitleProps {
 }
 
 export const Container = styled.section`
-    ${tw`flex sm:hidden`}
+    ${tw`flex md:hidden overflow-x-auto`}
+
+    &::-webkit-scrollbar {
+        ${tw`h-1`}
+    }
 `
 
 export const Article = styled.article.attrs(articleAttrs)`
@@ -31,7 +35,7 @@ export const Article = styled.article.attrs(articleAttrs)`
 `
 
 export const Title = styled.b<TitleProps>`
-    ${tw`px-4 py-2 rounded-full flex items-center bg-transparent`}
+    ${tw`px-4 py-2 whitespace-nowrap rounded-full flex items-center bg-transparent`}
     border: 1px solid ${({ color }) => rgba(color, 0.2)};
 
     > svg {

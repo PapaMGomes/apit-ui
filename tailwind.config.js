@@ -1,13 +1,13 @@
 const content = [
     './src/pages/**/*.{js,jsx,ts,tsx}',
-    "./src/components/**/*.{js,ts,jsx,tsx}",
+    './src/components/**/*.{js,ts,jsx,tsx}',
     './src/styles/**/*.{js,jsx,ts,tsx}'
 ]
 
 const theme = {
     fontSize: {
         sm: '0.75rem',
-        base: '0.875rem',
+        base: '1rem',
         lg: '1.125rem',
         xl: '2.25rem'
     },

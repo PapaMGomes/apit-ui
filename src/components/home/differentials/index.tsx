@@ -39,7 +39,7 @@ const Differentials: React.FC = () => {
                     <Subtitle>Para a sua empresa:</Subtitle>
 
                     {companyItems.map((item, index) => (
-                        <ScrollAnimation key={index} animation="fadeInRight">
+                        <ScrollAnimation key={index} animation="fadeInLeft">
                             <Item>{item}</Item>
                         </ScrollAnimation>
                     ))}

@@ -12,7 +12,7 @@ export const Title = styled.h4`
 `
 
 export const Content = styled.article`
-    ${tw`grid gap-5 grid-cols-5 sm:grid-cols-2`}
+    ${tw`grid gap-5 grid-cols-5 md:grid-cols-2`}
 `
 
 interface CardProps {

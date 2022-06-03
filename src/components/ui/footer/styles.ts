@@ -19,7 +19,9 @@ export const Section = styled.section`
     ${tw`w-full flex flex-col items-center`}
 `
 
-export const Text = styled.p``
+export const Text = styled.p`
+    ${tw`text-center`}
+`
 
 export const Article = styled.article`
     ${tw`flex`}

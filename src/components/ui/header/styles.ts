@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { AppContainer } from '@/styles/css/components'
+import { AppButton, AppContainer } from '@/styles/css/components'
 
 const imageContainerAttrs = {
     className: 'animate__animated animate__backInDown'
@@ -18,7 +18,7 @@ export const Nav = styled.nav`
 `
 
 export const Content = styled(AppContainer)`
-    ${tw`h-full py-4 flex items-center`}
+    ${tw`h-full py-4 flex items-center md:justify-between `}
 `
 
 export const ImageContainer = styled.figure.attrs(imageContainerAttrs)`
@@ -28,4 +28,13 @@ export const ImageContainer = styled.figure.attrs(imageContainerAttrs)`
 export const Image = styled.img`
     ${tw`w-full`}
     vertical-align: middle;
+`
+
+export const Button = styled(AppButton)`
+    ${tw`hidden md:block w-12 space-y-2 px-2 rounded-lg shadow-md`}
+`
+
+export const Line = styled.span`
+    ${tw`block w-full h-0.5 bg-gray-600`}
+    background: var(--footer-color);
 `
