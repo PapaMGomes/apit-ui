@@ -1,8 +1,9 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
 import Courses from '@/components/program/courses'
-import ProgramSpotlight from '@/components/program/program-spotlight'
 import { AppPageContainer } from '@/styles/css/components'
+import HowParticipate from '@/components/program/how-participate'
+import ProgramSpotlight from '@/components/program/program-spotlight'
 
 const Program: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Program: React.FC = () => {
 
             <AppPageContainer>
                 <ProgramSpotlight />
+                <HowParticipate />
                 <Courses />
             </AppPageContainer>
         </>

@@ -1,7 +1,8 @@
-import { MENU_ITEMS } from '../_data'
-import React, { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 import Logo from '@/assets/images/clean-logo.png'
+import { MENU_CONFIG } from '@/config/menu.config'
 import { BsChevronCompactDown } from 'react-icons/bs'
+import React, { useEffect, useRef, useState } from 'react'
 import {
     Backdrop,
     Container,
@@ -12,7 +13,6 @@ import {
     Article,
     Title
 } from './styles'
-import { useRouter } from 'next/router'
 
 interface SideMenuProps {
     isOpen: boolean
@@ -84,7 +84,7 @@ const SideMenu: React.FC<SideMenuProps> = props => {
                         <Image src={Logo} alt="APIT" />
 
                         <Content>
-                            {MENU_ITEMS.map((item, index) => (
+                            {MENU_CONFIG.map((item, index) => (
                                 <Article
                                     key={index}
                                     isOpen={item.id === selected}

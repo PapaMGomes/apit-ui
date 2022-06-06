@@ -1,15 +1,16 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
-import { AppContainer } from '@/styles/css/components'
+import { AppPageContainer } from '@/styles/css/components'
+import ApprenticeSpotlight from '@/components/apprentice/apprentice-spotlight'
 
 const Apprentice: React.FC = () => {
     return (
         <>
             <AppHead title="Aprendiz" />
 
-            <AppContainer page>
-                <div>Aprendiz</div>
-            </AppContainer>
+            <AppPageContainer>
+                <ApprenticeSpotlight />
+            </AppPageContainer>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import { THEME_CONFIG } from '@/config/theme.config'
 
-export const MENU_ITEMS = [
+export const MENU_CONFIG = [
     {
         id: 'home',
         name: 'Quem Somos',
@@ -15,13 +15,13 @@ export const MENU_ITEMS = [
         theme: THEME_CONFIG.program,
         children: []
     },
-    {
-        id: 'howParticipate',
-        name: 'Como Participar',
-        route: '/how-participate',
-        theme: THEME_CONFIG.howParticipate,
-        children: []
-    },
+    // {
+    //     id: 'howParticipate',
+    //     name: 'Como Participar',
+    //     route: '/how-participate',
+    //     theme: THEME_CONFIG.howParticipate,
+    //     children: []
+    // },
     {
         id: 'apprentice',
         name: 'Aprendiz',

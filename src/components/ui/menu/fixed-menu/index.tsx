@@ -1,6 +1,6 @@
 import React from 'react'
-import { MENU_ITEMS } from '../_data'
 import { useRouter } from 'next/router'
+import { MENU_CONFIG } from '@/config/menu.config'
 import { BsChevronCompactDown } from 'react-icons/bs'
 import { Container, Article, Title, Group, Item } from './styles'
 
@@ -28,7 +28,7 @@ const FixedMenu: React.FC = () => {
 
     return (
         <Container>
-            {MENU_ITEMS.map((item, index) => (
+            {MENU_CONFIG.map((item, index) => (
                 <Article key={index}>
                     <Title
                         color={item.theme.color}

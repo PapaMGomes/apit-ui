@@ -3,13 +3,13 @@ import { Text } from './styles'
 import { THEME_CONFIG } from '@/config/theme.config'
 import Spotlight, { SpotlightTitle } from '@/components/common/spotlight'
 
-const ProgramSpotlight: React.FC = () => {
+const ApprenticeSpotlight: React.FC = () => {
     return (
         <Spotlight
-            color={THEME_CONFIG.program.color}
+            color={THEME_CONFIG.apprentice.color}
             containerClass="h-[40vh] sm:h-[35vh]"
         >
-            <SpotlightTitle>Programas</SpotlightTitle>
+            <SpotlightTitle>Aprendiz</SpotlightTitle>
             <Text>
                 A APIT disponibiliza, às Instituições de Ensino, serviços que
                 garantem a qualidade, controle, acompanhamento e a legalidade
@@ -19,4 +19,4 @@ const ProgramSpotlight: React.FC = () => {
     )
 }
 
-export default ProgramSpotlight
+export default ApprenticeSpotlight
