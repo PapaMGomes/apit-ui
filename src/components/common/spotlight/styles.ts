@@ -9,7 +9,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.section<ContainerProps>`
-    ${tw`rounded-bl-[65%] rounded-br-[30%]`}
+    ${tw`rounded-bl-[65%] rounded-br-[30%] min-h-[240px]`}
 
     background: ${({ theme, color }) => (color ? color : theme.colors.primary)};
     box-shadow: 0px 8px 24px
