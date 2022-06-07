@@ -7,7 +7,8 @@ export const Container = styled(AppContainer)`
 `
 
 export const Title = styled.b`
-    ${tw`text-lg`}
+    ${tw`text-lg font-bold`}
+    color: ${({ theme }) => theme.colors.blue};
 `
 
 export const Content = styled.article`
