@@ -1,15 +1,16 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
-import { AppContainer } from '@/styles/css/components'
+import { AppPageContainer } from '@/styles/css/components'
+import EventSpotlight from '@/components/event/event-spotlight'
 
 const Event: React.FC = () => {
     return (
         <>
             <AppHead title="Eventos" />
 
-            <AppContainer page>
-                <div>Eventos</div>
-            </AppContainer>
+            <AppPageContainer>
+                <EventSpotlight />
+            </AppPageContainer>
         </>
     )
 }

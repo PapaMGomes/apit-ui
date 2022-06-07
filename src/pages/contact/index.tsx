@@ -1,15 +1,16 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
-import { AppContainer } from '@/styles/css/components'
+import { AppPageContainer } from '@/styles/css/components'
+import ContactSpotlight from '@/components/contact/contact-spotlight'
 
 const Contact: React.FC = () => {
     return (
         <>
             <AppHead title="Contato" />
 
-            <AppContainer page>
-                <div>Contato</div>
-            </AppContainer>
+            <AppPageContainer>
+                <ContactSpotlight />
+            </AppPageContainer>
         </>
     )
 }
