@@ -18,12 +18,15 @@ export const AppFormGroup = styled.div`
         display: block;
         border: 2px solid;
         padding: 4px 12px;
-        border-radius: 4px;
-        ${tw`invalid:border-red-500`}
+        ${tw`invalid:border-red-500 rounded-lg`}
 
         &:focus {
             outline: none !important;
         }
+    }
+
+    > textarea {
+        height: auto;
     }
 
     > span {
