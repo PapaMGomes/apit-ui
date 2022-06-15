@@ -1,8 +1,10 @@
 import React from 'react'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
+import { STATES } from '@/constants/state.constant'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { DELEGATE } from '@/constants/delegate.constant'
+import { CurriculumRegistrationInterface } from '@/interfaces/curriculum-registration.interface'
 import {
     Container,
     Title,
@@ -18,23 +20,32 @@ import {
     Option
 } from './styles'
 
-interface CurriculumRegistrationProps {}
-
-const CurriculumRegistration: React.FC<CurriculumRegistrationProps> = props => {
-    const contactForm = yup.object().shape({
+const CurriculumRegistration: React.FC = () => {
+    const curriculumRegistrationForm = yup.object().shape({
+        complement: yup.string(),
+        cep: yup.string().required('Insira o CEP'),
+        sex: yup.string().required('Insira o sexo'),
+        city: yup.string().required('Insira a cidade'),
+        email: yup.string().required('Insira um email'),
+        state: yup.string().required('Insira o estado'),
         name: yup.string().required('Insira o seu nome'),
-        email: yup.string().required('Insira o seu email'),
-        subject: yup.string().required('Insira o assunto do e-mail')
+        file: yup.string().required('Insira um arquivo'),
+        address: yup.string().required('Insira o endereço'),
+        telephone: yup.string().required('Insira o seu telefone'),
+        vacancyType: yup.string().required('Insira o tipo da vaga'),
+        birthDate: yup.string().required('Insira a data de nascimento')
     })
 
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm<any>({ resolver: yupResolver(contactForm) })
+    } = useForm<CurriculumRegistrationInterface>({
+        resolver: yupResolver(curriculumRegistrationForm)
+    })
 
-    const handleSubmitForm = (contactFormData: any) => {
-        console.log(contactFormData)
+    const handleSubmitForm = (curriculumRegistrationFormData: any) => {
+        console.log(curriculumRegistrationFormData)
     }
 
     return (
@@ -53,17 +64,18 @@ const CurriculumRegistration: React.FC<CurriculumRegistrationProps> = props => {
                         <Row>
                             <FormGroup>
                                 <Label>Sexo</Label>
-                                <Select {...register('subject')}>
+                                <Select {...register('sex')}>
+                                    <Option value="">Selecione</Option>
                                     <Option>Masculino</Option>
                                     <Option>Feminino</Option>
                                 </Select>
-                                <Span>{errors.subject?.message}</Span>
+                                <Span>{errors.sex?.message}</Span>
                             </FormGroup>
 
                             <FormGroup>
                                 <Label>Data de nascimento</Label>
-                                <Input {...register('subject')} type="date" />
-                                <Span>{errors.subject?.message}</Span>
+                                <Input {...register('birthDate')} type="date" />
+                                <Span>{errors.birthDate?.message}</Span>
                             </FormGroup>
                         </Row>
 
@@ -75,57 +87,66 @@ const CurriculumRegistration: React.FC<CurriculumRegistrationProps> = props => {
 
                         <FormGroup>
                             <Label>Telefone (celular)</Label>
-                            <Input {...register('subject')} type="text" />
-                            <Span>{errors.subject?.message}</Span>
+                            <Input {...register('telephone')} type="text" />
+                            <Span>{errors.telephone?.message}</Span>
                         </FormGroup>
 
                         <FormGroup>
                             <Label>Tipo de vaga pretendida</Label>
-                            <Select {...register('subject')}>
+                            <Select {...register('vacancyType')}>
+                                <Option value="">Selecione</Option>
                                 <Option>Aprendiz</Option>
                                 <Option>Estagiário</Option>
                             </Select>
-                            <Span>{errors.subject?.message}</Span>
+                            <Span>{errors.vacancyType?.message}</Span>
                         </FormGroup>
                     </Column>
 
                     <Column>
                         <FormGroup>
                             <Label>Endereço</Label>
-                            <Input {...register('name')} type="text" />
-                            <Span>{errors.name?.message}</Span>
+                            <Input {...register('address')} type="text" />
+                            <Span>{errors.address?.message}</Span>
                         </FormGroup>
 
                         <Row>
                             <FormGroup>
-                                <Label>Bairro</Label>
-                                <Input {...register('name')} type="text" />
-                                <Span>{errors.name?.message}</Span>
+                                <Label>Cidade</Label>
+                                <Input {...register('city')} type="text" />
+                                <Span>{errors.city?.message}</Span>
                             </FormGroup>
 
                             <FormGroup>
-                                <Label>Cidade</Label>
-                                <Input {...register('name')} type="text" />
-                                <Span>{errors.name?.message}</Span>
+                                <Label>Estado</Label>
+                                <Select {...register('state')}>
+                                    <Option value="">Selecione</Option>
+
+                                    {STATES.map((item, index) => (
+                                        <Option key={index} value={item.name}>
+                                            {item.name}
+                                        </Option>
+                                    ))}
+                                </Select>
+                                <Span>{errors.state?.message}</Span>
                             </FormGroup>
                         </Row>
 
                         <FormGroup>
                             <Label>CEP</Label>
-                            <Input {...register('name')} type="text" />
-                            <Span>{errors.name?.message}</Span>
+                            <Input {...register('cep')} type="text" />
+                            <Span>{errors.cep?.message}</Span>
                         </FormGroup>
 
                         <FormGroup>
                             <Label>Complemento</Label>
-                            <Input {...register('name')} type="text" />
-                            <Span>{errors.name?.message}</Span>
+                            <Input {...register('complement')} type="text" />
+                            <Span>{errors.complement?.message}</Span>
                         </FormGroup>
 
                         <FormGroup>
                             <Label>Envie seu currículo em Word ou PDF</Label>
-                            <Input {...register('name')} type="file" />
-                            <Span>{errors.name?.message}</Span>
+                            <Input {...register('file')} type="file" />
+                            <Span>{errors.file?.message}</Span>
                         </FormGroup>
                     </Column>
                 </Row>

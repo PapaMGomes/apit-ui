@@ -4,6 +4,7 @@ import AppHead from '@/components/common/app-head'
 import BeSponsor from '@/components/company/be-sponsor'
 import { AppPageContainer } from '@/styles/css/components'
 import CompanySpotlight from '@/components/company/company-spotlight'
+import PartnerCompanyForm from '@/components/common/partner-company-form'
 
 const Company: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Company: React.FC = () => {
                 <CompanySpotlight />
                 <BeSponsor />
                 <Partners />
+                <PartnerCompanyForm />
             </AppPageContainer>
         </>
     )

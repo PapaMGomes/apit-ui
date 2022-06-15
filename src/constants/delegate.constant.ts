@@ -1,3 +1,4 @@
 export const DELEGATE = {
-    curriculumRegistration: 'curriculumRegistration'
+    curriculumRegistration: 'curriculumRegistration',
+    partnerCompanyRegistration: 'partnerCompanyRegistration'
 }
