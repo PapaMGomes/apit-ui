@@ -10,7 +10,7 @@ interface TitleProps {
 }
 
 export const Container = styled.section`
-    ${tw`flex md:hidden overflow-x-auto`}
+    ${tw`flex md:hidden overflow-x-auto px-4`}
 
     &::-webkit-scrollbar {
         ${tw`h-1`}

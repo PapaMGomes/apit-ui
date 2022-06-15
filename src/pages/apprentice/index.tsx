@@ -4,6 +4,7 @@ import { AppPageContainer } from '@/styles/css/components'
 import AboutApprentice from '@/components/apprentice/about-apprentice'
 import BecomeApprentice from '@/components/apprentice/become-apprentice'
 import ApprenticeSpotlight from '@/components/apprentice/apprentice-spotlight'
+import CurriculumRegistration from '@/components/common/curriculum-registration'
 
 const Apprentice: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Apprentice: React.FC = () => {
                 <ApprenticeSpotlight />
                 <AboutApprentice />
                 <BecomeApprentice />
+                <CurriculumRegistration />
             </AppPageContainer>
         </>
     )

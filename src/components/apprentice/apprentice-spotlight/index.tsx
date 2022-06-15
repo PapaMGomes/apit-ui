@@ -1,29 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from './styles'
+import { scrollTo } from '@/helpers/scroll.helper'
 import { THEME_CONFIG } from '@/config/theme.config'
+import { DELEGATE } from '@/constants/delegate.constant'
 import Spotlight, { SpotlightTitle } from '@/components/common/spotlight'
-import ModalCurriculumRegistration from '@/components/modals/curriculum-registration'
 
 const ApprenticeSpotlight: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false)
-
     return (
-        <>
-            <Spotlight
-                color={THEME_CONFIG.apprentice.color}
-                containerClass="h-[40vh] sm:h-[35vh]"
-            >
-                <SpotlightTitle>Aprendiz</SpotlightTitle>
-                <Button onClick={() => setIsModalOpen(true)}>
-                    Cadastre seu currículo
-                </Button>
-            </Spotlight>
-
-            <ModalCurriculumRegistration
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-            />
-        </>
+        <Spotlight
+            color={THEME_CONFIG.apprentice.color}
+            containerClass="h-[40vh] sm:h-[35vh]"
+        >
+            <SpotlightTitle>Aprendiz</SpotlightTitle>
+            <Button onClick={() => scrollTo(DELEGATE.curriculumRegistration)}>
+                Cadastre seu currículo
+            </Button>
+        </Spotlight>
     )
 }
 

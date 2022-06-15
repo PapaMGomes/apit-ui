@@ -4,6 +4,7 @@ import Courses from '@/components/program/courses'
 import { AppPageContainer } from '@/styles/css/components'
 import HowParticipate from '@/components/program/how-participate'
 import ProgramSpotlight from '@/components/program/program-spotlight'
+import CurriculumRegistration from '@/components/common/curriculum-registration'
 
 const Program: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Program: React.FC = () => {
                 <ProgramSpotlight />
                 <HowParticipate />
                 <Courses />
+                <CurriculumRegistration />
             </AppPageContainer>
         </>
     )

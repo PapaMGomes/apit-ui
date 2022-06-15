@@ -9,6 +9,8 @@ import AlbertSabinLogo from '@/assets/images/partners/albert-sabin.png'
 import VitalBrasilLogo from '@/assets/images/partners/vital-brasil.png'
 import AmaroJulianaLogo from '@/assets/images/partners/amaro-juliana.png'
 import ControleAnaliticoLogo from '@/assets/images/partners/controle-analitico.png'
+import PapaMikeLogo from '@/assets/images/partners/papa-mike.png'
+import UnoparLogo from '@/assets/images/partners/unopar.png'
 
 import { Container, Content, Title, Card, Image, CardTitle } from './styles'
 
@@ -25,7 +27,9 @@ const Partners: React.FC = () => {
         { image: RedeDorLogo, title: 'Red D’or' },
         { image: SathelLogo, title: 'Sathel' },
         { image: SystemLogo, title: 'System' },
-        { image: VitalBrasilLogo, title: 'Vital Brazil' }
+        { image: VitalBrasilLogo, title: 'Vital Brazil' },
+        { image: PapaMikeLogo, title: 'Papa Mike' },
+        { image: UnoparLogo, title: 'Unopar' }
     ]
 
     return (
