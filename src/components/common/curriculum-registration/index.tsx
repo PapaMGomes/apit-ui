@@ -5,7 +5,9 @@ import { STATES } from '@/constants/state.constant'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { EmailService } from '@/services/email.service'
 import { DELEGATE } from '@/constants/delegate.constant'
+import { AlertService } from '@/services/_alert.service'
 import { convertToBase64 } from '@/helpers/base64.helper'
+import { RECIPIENT_CURRICULUM } from '@/config/email.config'
 import { TemplateEmailModel } from '@/models/email/template-email.model'
 import { CurriculumRegistrationInterface } from '@/interfaces/curriculum-registration.interface'
 import {
@@ -25,6 +27,7 @@ import {
 
 const CurriculumRegistration: React.FC = () => {
     const emailService = new EmailService()
+    const alertService = new AlertService()
     const templateEmailModel = new TemplateEmailModel()
 
     const curriculumRegistrationForm = yup.object().shape({
@@ -43,6 +46,7 @@ const CurriculumRegistration: React.FC = () => {
     })
 
     const {
+        reset,
         register,
         handleSubmit,
         formState: { errors }
@@ -58,14 +62,15 @@ const CurriculumRegistration: React.FC = () => {
                 attachments,
                 from: model.email,
                 replyTo: model.email,
-                to: 'pedro.silva@cbyk.com.br',
+                to: RECIPIENT_CURRICULUM,
                 subject: 'Cadastro de currículo',
                 html: templateEmailModel.curriculum(model)
             }
             const { data } = await emailService.send(emailDTO)
-            console.log(data)
+            alertService.success(data.message)
+            reset()
         } catch (error) {
-            console.log('ERROR :', error)
+            alertService.error('Ocorreu um erro ao enviar o currículo')
         }
     }
 

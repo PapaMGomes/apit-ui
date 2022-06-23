@@ -1,11 +1,17 @@
 import { createGlobalStyle } from 'styled-components'
+import 'react-toastify/dist/ReactToastify.css'
 import tw from 'twin.macro'
 import 'animate.css'
 
 export default createGlobalStyle`
   :root {
+    --footer-color: ${({ theme }) => theme.colors.orange};
     --scrollbar-color: ${({ theme }) => theme.colors.primary};
-    --footer-color: ${({ theme }) => theme.colors.orange}
+
+    --toastify-color-info: ${({ theme }) => theme.colors.blue};
+    --toastify-color-error: ${({ theme }) => theme.colors.red};
+    --toastify-color-success: ${({ theme }) => theme.colors.green};
+    --toastify-color-warning: ${({ theme }) => theme.colors.yellow};
   }
 
   * {

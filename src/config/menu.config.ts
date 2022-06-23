@@ -15,13 +15,6 @@ export const MENU_CONFIG = [
         theme: THEME_CONFIG.program,
         children: []
     },
-    // {
-    //     id: 'howParticipate',
-    //     name: 'Como Participar',
-    //     route: '/how-participate',
-    //     theme: THEME_CONFIG.howParticipate,
-    //     children: []
-    // },
     {
         id: 'apprentice',
         name: 'Aprendiz',
