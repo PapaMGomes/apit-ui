@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsFillTelephoneOutboundFill } from 'react-icons/bs'
 import {
     Container,
     Content,
@@ -7,6 +8,7 @@ import {
     Title,
     Text,
     Map,
+    CardFooter,
     CardTitle
 } from './styles'
 
@@ -43,9 +45,15 @@ const ContactAddress: React.FC = () => {
                         <Text>{item.address}</Text>
                         <Text>{item.phone}</Text>
 
-                        <Button onClick={() => openURL(item.link)}>
-                            Abrir mapa
-                        </Button>
+                        <CardFooter>
+                            <Button onClick={() => openURL(item.link)}>
+                                Abrir mapa
+                            </Button>
+
+                            <Button>
+                                <BsFillTelephoneOutboundFill />
+                            </Button>
+                        </CardFooter>
                     </Card>
                 ))}
             </Content>

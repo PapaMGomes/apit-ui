@@ -3,7 +3,10 @@ import * as yup from 'yup'
 import { FiSend } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-
+import { EmailService } from '@/services/email.service'
+import { AlertService } from '@/services/_alert.service'
+import { ContactInterface } from '@/interfaces/contact.interface'
+import { TemplateEmailModel } from '@/models/email/template-email.model'
 import {
     Container,
     Title,
@@ -16,8 +19,13 @@ import {
     Textarea,
     ButtonText
 } from './styles'
+import { RECIPIENT_CONTACT } from '@/config/email.config'
 
 const ContactEmail: React.FC = () => {
+    const emailService = new EmailService()
+    const alertService = new AlertService()
+    const templateEmailModel = new TemplateEmailModel()
+
     const contactForm = yup.object().shape({
         name: yup.string().required('Insira o seu nome'),
         email: yup.string().required('Insira o seu email'),
@@ -26,13 +34,29 @@ const ContactEmail: React.FC = () => {
     })
 
     const {
+        reset,
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm<any>({ resolver: yupResolver(contactForm) })
+    } = useForm<ContactInterface>({ resolver: yupResolver(contactForm) })
 
-    const handleSubmitForm = (contactFormData: any) => {
-        console.log(contactFormData)
+    const handleSubmitForm = async (model: ContactInterface) => {
+        console.log(model)
+        try {
+            const emailDTO = {
+                from: model.email,
+                replyTo: model.email,
+                to: RECIPIENT_CONTACT,
+                subject: model.subject,
+                html: templateEmailModel.contact(model)
+            }
+
+            const { data } = await emailService.send(emailDTO)
+            alertService.success(data.message)
+            reset()
+        } catch (error) {
+            alertService.error('Ocorreu um erro ao enviar o currículo')
+        }
     }
 
     return (

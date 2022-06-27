@@ -3,7 +3,11 @@ import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { STATES } from '@/constants/state.constant'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { EmailService } from '@/services/email.service'
 import { DELEGATE } from '@/constants/delegate.constant'
+import { AlertService } from '@/services/_alert.service'
+import { RECIPIENT_COMPANY } from '@/config/email.config'
+import { TemplateEmailModel } from '@/models/email/template-email.model'
 import { PartnerCompanyFormInterface } from '@/interfaces/partner-company-form.interface'
 import {
     Container,
@@ -39,12 +43,16 @@ const PartnerCompanyForm: React.FC = () => {
         { name: 'Outros' }
     ]
 
+    const emailService = new EmailService()
+    const alertService = new AlertService()
+    const templateEmailModel = new TemplateEmailModel()
     const partnerCompanyForm = yup.object().shape({
         howDidFind: yup.string(),
         city: yup.string().required('Insira a cidade'),
         state: yup.string().required('Insira o estado'),
         email: yup.string().required('Insira um email'),
         district: yup.string().required('Insira o bairro'),
+        address: yup.string().required('Insira o endereço'),
         interest: yup.string().required('Insira o interesse'),
         telephone: yup.string().required('Insira um telefone'),
         message: yup.string().required('Insira a sua mensagem'),
@@ -53,6 +61,7 @@ const PartnerCompanyForm: React.FC = () => {
     })
 
     const {
+        reset,
         register,
         handleSubmit,
         formState: { errors }
@@ -60,8 +69,22 @@ const PartnerCompanyForm: React.FC = () => {
         resolver: yupResolver(partnerCompanyForm)
     })
 
-    const handleSubmitForm = (partnerCompanyFormData: any) => {
-        console.log(partnerCompanyFormData)
+    const handleSubmitForm = async (model: PartnerCompanyFormInterface) => {
+        try {
+            const emailDTO = {
+                from: model.email,
+                replyTo: model.email,
+                to: RECIPIENT_COMPANY,
+                subject: 'Parceiria',
+                html: templateEmailModel.company(model)
+            }
+
+            const { data } = await emailService.send(emailDTO)
+            alertService.success(data.message)
+            reset()
+        } catch (error) {
+            alertService.error('Ocorreu um erro ao enviar o currículo')
+        }
     }
 
     return (
@@ -94,6 +117,18 @@ const PartnerCompanyForm: React.FC = () => {
                             <Span>{errors.telephone?.message}</Span>
                         </FormGroup>
 
+                        <FormGroup>
+                            <Label>Rua</Label>
+                            <Input {...register('address')} type="text" />
+                            <Span>{errors.address?.message}</Span>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Label>Bairro</Label>
+                            <Input {...register('district')} type="text" />
+                            <Span>{errors.district?.message}</Span>
+                        </FormGroup>
+
                         <Row>
                             <FormGroup>
                                 <Label>Cidade</Label>
@@ -115,13 +150,9 @@ const PartnerCompanyForm: React.FC = () => {
                                 <Span>{errors.state?.message}</Span>
                             </FormGroup>
                         </Row>
+                    </Column>
 
-                        <FormGroup>
-                            <Label>Bairro</Label>
-                            <Input {...register('district')} type="text" />
-                            <Span>{errors.district?.message}</Span>
-                        </FormGroup>
-
+                    <Column>
                         <Row>
                             <FormGroup>
                                 <Label>Interesse em</Label>
@@ -149,9 +180,7 @@ const PartnerCompanyForm: React.FC = () => {
                                 <Span>{errors.howDidFind?.message}</Span>
                             </FormGroup>
                         </Row>
-                    </Column>
 
-                    <Column>
                         <FormGroup>
                             <Label>E-mail</Label>
                             <Input {...register('email')} type="email" />
