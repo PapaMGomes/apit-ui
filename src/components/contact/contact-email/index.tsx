@@ -20,6 +20,7 @@ import {
     ButtonText
 } from './styles'
 import { RECIPIENT_CONTACT } from '@/config/email.config'
+import { useLoading } from '@/hooks/loading.hook'
 
 const ContactEmail: React.FC = () => {
     const emailService = new EmailService()
@@ -41,7 +42,8 @@ const ContactEmail: React.FC = () => {
     } = useForm<ContactInterface>({ resolver: yupResolver(contactForm) })
 
     const handleSubmitForm = async (model: ContactInterface) => {
-        console.log(model)
+        useLoading(true, 'Enviando o seu contato...')
+
         try {
             const emailDTO = {
                 from: model.email,
@@ -56,6 +58,8 @@ const ContactEmail: React.FC = () => {
             reset()
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
+        } finally {
+            useLoading(false)
         }
     }
 

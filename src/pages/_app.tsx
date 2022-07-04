@@ -1,5 +1,7 @@
 import '@/styles/css/global.css'
+import store from '@/store'
 import { AppProps } from 'next/app'
+import { Provider } from 'react-redux'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import Layout from '@/components/ui/layout'
@@ -27,9 +29,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     }
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <Provider store={store}>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </Provider>
     )
 }
 

@@ -49,13 +49,13 @@ export const Button = styled(AppButton)`
     &:hover {
         box-shadow: 0px 0px 14px ${({ theme }) => theme.colors.green};
     }
+`
 
-    &:last-of-type {
-        ${tw`w-[20%] p-0 flex items-center justify-center`}
-        background: ${({ theme }) => theme.colors.blue};
+export const PhoneLink = styled(Button)`
+    ${tw`w-[20%] p-0 flex items-center justify-center`}
+    background: ${({ theme }) => theme.colors.blue};
 
-        &:hover {
-            box-shadow: 0px 0px 14px ${({ theme }) => theme.colors.blue};
-        }
+    &:hover {
+        box-shadow: 0px 0px 14px ${({ theme }) => theme.colors.blue};
     }
 `

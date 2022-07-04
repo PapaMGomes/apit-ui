@@ -24,6 +24,7 @@ import {
     Select,
     Option
 } from './styles'
+import { useLoading } from '@/hooks/loading.hook'
 
 const CurriculumRegistration: React.FC = () => {
     const emailService = new EmailService()
@@ -56,6 +57,8 @@ const CurriculumRegistration: React.FC = () => {
 
     const handleSubmitForm = async (model: CurriculumRegistrationInterface) => {
         try {
+            useLoading(true, 'Enviando o seu currículo...')
+
             const [file] = model.file
             const attachments = await getAttachments(file, model)
             const emailDTO = {
@@ -71,6 +74,8 @@ const CurriculumRegistration: React.FC = () => {
             reset()
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
+        } finally {
+            useLoading(false)
         }
     }
 
@@ -149,7 +154,6 @@ const CurriculumRegistration: React.FC = () => {
                             <Select {...register('vacancyType')}>
                                 <Option value="">Selecione</Option>
                                 <Option>Aprendiz</Option>
-                                <Option>Estagiário</Option>
                             </Select>
                             <Span>{errors.vacancyType?.message}</Span>
                         </FormGroup>

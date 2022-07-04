@@ -1,12 +1,12 @@
-export const RECIPIENT_CURRICULUM = 'pedro.silva@cbyk.com.br'
-export const RECIPIENT_COMPANY = 'pedro.silva@cbyk.com.br'
-export const RECIPIENT_CONTACT = 'pedro.silva@cbyk.com.br'
+export const RECIPIENT_CURRICULUM = 'contato@apitaprendiz.org.br'
+export const RECIPIENT_COMPANY = 'contato@apitaprendiz.org.br'
+export const RECIPIENT_CONTACT = 'contato@apitaprendiz.org.br'
 
 export const TRANSPORT_CONFIG = {
-    port: 587,
-    host: 'smtp-relay.sendinblue.com',
+    port: 465,
+    host: 'mail.papamike.com.br',
     auth: {
-        pass: 'BvjdxILO0pSEDhgn',
-        user: 'pedro.silva-dev@hotmail.com'
+        pass: 'Zebg8364@#$',
+        user: 'suporte@papamike.com.br'
     }
 }

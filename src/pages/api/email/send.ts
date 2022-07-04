@@ -4,16 +4,17 @@ import nodemailer from 'nodemailer'
 
 type ResponseData = { message: string }
 
-export default function handler(
+export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<ResponseData>
 ) {
     try {
         const transporter = nodemailer.createTransport(TRANSPORT_CONFIG)
-        transporter.sendMail(req.body)
+        await transporter.sendMail(req.body)
 
         res.status(200).json({ message: 'Email enviado com sucesso' })
     } catch (error) {
+        console.log(error)
         res.status(400).json({ message: 'Ocorreu um erro ao enviar email' })
     }
 }

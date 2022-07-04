@@ -24,17 +24,14 @@ import {
     Option,
     Textarea
 } from './styles'
+import { useLoading } from '@/hooks/loading.hook'
 
 const PartnerCompanyForm: React.FC = () => {
-    const interestOptions = [
-        { name: 'Aprendiz' },
-        { name: 'Estagiário' },
-        { name: 'Aprendiz e Estagiário' }
-    ]
+    const interestOptions = [{ name: 'Aprendiz' }]
 
     const howDidFindOptions = [
         { name: 'Indicação' },
-        { name: 'Internete' },
+        { name: 'Internet' },
         { name: 'Divulgação Institucional' },
         { name: 'Notícia' },
         { name: 'Comunicado Eletrônico' },
@@ -71,6 +68,8 @@ const PartnerCompanyForm: React.FC = () => {
 
     const handleSubmitForm = async (model: PartnerCompanyFormInterface) => {
         try {
+            useLoading(true, 'Enviando email...')
+
             const emailDTO = {
                 from: model.email,
                 replyTo: model.email,
@@ -84,6 +83,8 @@ const PartnerCompanyForm: React.FC = () => {
             reset()
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
+        } finally {
+            useLoading(false)
         }
     }
 

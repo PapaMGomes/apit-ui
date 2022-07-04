@@ -9,7 +9,8 @@ import {
     Text,
     Map,
     CardFooter,
-    CardTitle
+    CardTitle,
+    PhoneLink
 } from './styles'
 
 const ContactAddress: React.FC = () => {
@@ -31,7 +32,8 @@ const ContactAddress: React.FC = () => {
     ]
 
     const openURL = (url: string) => window.open(url, '_blank')
-
+    const openPhoneLink = (phone: string) =>
+        window.open(`tel:${phone}`, '_parent')
     return (
         <Container>
             <Title>Endereços</Title>
@@ -50,9 +52,11 @@ const ContactAddress: React.FC = () => {
                                 Abrir mapa
                             </Button>
 
-                            <Button>
+                            <PhoneLink
+                                onClick={() => openPhoneLink(item.phone)}
+                            >
                                 <BsFillTelephoneOutboundFill />
-                            </Button>
+                            </PhoneLink>
                         </CardFooter>
                     </Card>
                 ))}
