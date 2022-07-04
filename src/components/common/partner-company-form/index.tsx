@@ -24,7 +24,7 @@ import {
     Option,
     Textarea
 } from './styles'
-import { useLoading } from '@/hooks/loading.hook'
+import { loadingControl } from '@/hooks/loading.hook'
 
 const PartnerCompanyForm: React.FC = () => {
     const interestOptions = [{ name: 'Aprendiz' }]
@@ -68,7 +68,7 @@ const PartnerCompanyForm: React.FC = () => {
 
     const handleSubmitForm = async (model: PartnerCompanyFormInterface) => {
         try {
-            useLoading(true, 'Enviando email...')
+            loadingControl(true, 'Enviando email...')
 
             const emailDTO = {
                 from: model.email,
@@ -84,7 +84,7 @@ const PartnerCompanyForm: React.FC = () => {
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
         } finally {
-            useLoading(false)
+            loadingControl(false)
         }
     }
 

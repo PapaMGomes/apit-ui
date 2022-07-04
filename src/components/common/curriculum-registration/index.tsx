@@ -24,7 +24,7 @@ import {
     Select,
     Option
 } from './styles'
-import { useLoading } from '@/hooks/loading.hook'
+import { loadingControl } from '@/hooks/loading.hook'
 
 const CurriculumRegistration: React.FC = () => {
     const emailService = new EmailService()
@@ -57,7 +57,7 @@ const CurriculumRegistration: React.FC = () => {
 
     const handleSubmitForm = async (model: CurriculumRegistrationInterface) => {
         try {
-            useLoading(true, 'Enviando o seu currículo...')
+            loadingControl(true, 'Enviando o seu currículo...')
 
             const [file] = model.file
             const attachments = await getAttachments(file, model)
@@ -75,7 +75,7 @@ const CurriculumRegistration: React.FC = () => {
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
         } finally {
-            useLoading(false)
+            loadingControl(false)
         }
     }
 

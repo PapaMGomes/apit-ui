@@ -20,7 +20,7 @@ import {
     ButtonText
 } from './styles'
 import { RECIPIENT_CONTACT } from '@/config/email.config'
-import { useLoading } from '@/hooks/loading.hook'
+import { loadingControl } from '@/hooks/loading.hook'
 
 const ContactEmail: React.FC = () => {
     const emailService = new EmailService()
@@ -42,7 +42,7 @@ const ContactEmail: React.FC = () => {
     } = useForm<ContactInterface>({ resolver: yupResolver(contactForm) })
 
     const handleSubmitForm = async (model: ContactInterface) => {
-        useLoading(true, 'Enviando o seu contato...')
+        loadingControl(true, 'Enviando o seu contato...')
 
         try {
             const emailDTO = {
@@ -59,7 +59,7 @@ const ContactEmail: React.FC = () => {
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o currículo')
         } finally {
-            useLoading(false)
+            loadingControl(false)
         }
     }
 
