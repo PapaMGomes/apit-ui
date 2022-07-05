@@ -8,7 +8,7 @@
         "build": "next build",
         "start": "node server.js",
         "prepare": "husky install",
-        "export": "next build && next export"
+        "generate:static": "next build && next export"
     },
     "husky": {
         "hooks": {
