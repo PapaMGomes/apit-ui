@@ -11,7 +11,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "echo \"[Husky] pre-push\""
+            "pre-push": "yarn export"
         }
     },
     "dependencies": {
