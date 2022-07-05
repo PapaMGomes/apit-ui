@@ -6,12 +6,13 @@
         "dev": "next dev",
         "build": "next build",
         "lint": "next lint",
+        "prepare": "husky install",
         "export": "next build && next export",
         "start": "node server.js"
     },
     "husky": {
         "hooks": {
-            "pre-push": "yarn export",
+            "pre-push": "npm run export",
             "pre-commit": "echo \"[Husky] pre-commit\""
         }
     },
