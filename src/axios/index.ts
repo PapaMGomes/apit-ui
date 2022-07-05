@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosClient = axios.create({
-    baseURL: '/api',
+    baseURL: 'https://apitaprendiz.vercel.app/api',
     headers: {
         Accept: 'application/json',
         'content-type': 'application/json'
