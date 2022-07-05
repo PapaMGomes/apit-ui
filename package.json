@@ -4,11 +4,11 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
         "lint": "next lint",
+        "build": "next build",
+        "start": "node server.js",
         "prepare": "husky install",
-        "export": "next build && next export",
-        "start": "node server.js"
+        "export": "next build && next export"
     },
     "husky": {
         "hooks": {
