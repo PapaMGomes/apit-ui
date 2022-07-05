@@ -2,3 +2,4 @@
 deployment:
   tasks:
     - npm run generate:static
+    - export DEPLOYPATH=/repositories/apit-ui
