@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - npm run export
+    - npm run generate:static
