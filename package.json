@@ -8,7 +8,7 @@
         "build": "next build",
         "start": "node server.js",
         "prepare": "husky install",
-        "generate:static": "set NODE_ENV=development && next build && next export"
+        "export": "set NODE_ENV=development && next build && next export"
     },
     "husky": {
         "hooks": {
