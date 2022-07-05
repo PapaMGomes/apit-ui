@@ -1,5 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/teste-yml
-    - /bin/cp out $DEPLOYPATH
+    - npm run generate:static

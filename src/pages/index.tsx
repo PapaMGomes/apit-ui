@@ -14,7 +14,7 @@ const Home: React.FC = () => {
             <Spotlight containerClass="h-[60vh] sm:h-[30vh]">
                 <SpotlightTitle>
                     Trabalhamos para educar e empregar jovens em busca de um
-                    futuro melhor !
+                    futuro melhor !!
                 </SpotlightTitle>
             </Spotlight>
 
