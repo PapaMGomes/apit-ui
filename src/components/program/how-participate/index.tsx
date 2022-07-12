@@ -3,21 +3,21 @@ import { Container, Title, Content, Card, Text } from './styles'
 
 const HowParticipate: React.FC = () => {
     const items = [
-        { label: 'identificar as oportunidades de Estágio' },
-        { label: 'ajustar suas condições de realização de Estágio' },
-        { label: 'fazer o acompanhamento administrativo' },
+        { label: 'Identificar as oportunidades de Jovem Aprendiz' },
+        { label: 'Ajustar suas condições de realização de Jovem Aprendiz' },
+        { label: 'Fazer o acompanhamento administrativo' },
         {
-            label: 'encaminhar negociação de seguros contra acidentes pessoais do estudante'
+            label: 'Encaminhar negociação de seguros contra acidentes pessoais do estudante'
         },
         {
-            label: 'cadastrar os estudantes interessados em Estágio para encaminhar para as concedentes'
+            label: 'Cadastrar os estudantes interessados em Estágio para encaminhar para as concedentes'
         }
     ]
 
     return (
         <Container>
             <Title>
-                No processo de aperfeiçoamento do Estágio, auxiliamos as
+                No processo de aperfeiçoamento, auxiliamos as
                 instituições de ensino a:
             </Title>
 

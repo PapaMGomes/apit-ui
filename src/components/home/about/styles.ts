@@ -28,7 +28,9 @@ export const Content = styled.article`
     ${tw`flex items-center sm:flex-col mt-8`}
 `
 
-export const Article = styled.article``
+export const Article = styled.article`
+    ${tw`ml-4 sm:ml-0`}
+`
 
 export const Image = styled.img`
     ${tw`w-72 mr-12 transition-all duration-700 sm:mb-8 sm:mr-0`}

@@ -27,5 +27,5 @@ export const Title = styled.h4`
 `
 
 export const Text = styled.p`
-    ${tw`text-justify`}
+    ${tw`text-left`}
 `

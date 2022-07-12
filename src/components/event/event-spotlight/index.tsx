@@ -1,4 +1,5 @@
 import React from 'react'
+import { Text } from './styles'
 import { THEME_CONFIG } from '@/config/theme.config'
 import Spotlight, { SpotlightTitle } from '@/components/common/spotlight'
 
@@ -9,6 +10,7 @@ const EventSpotlight: React.FC = () => {
             containerClass="h-[40vh] sm:h-[35vh]"
         >
             <SpotlightTitle>Eventos</SpotlightTitle>
+            <Text>Acompanhe também em nossas redes sociais</Text>
         </Spotlight>
     )
 }

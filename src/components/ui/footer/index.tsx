@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { format } from 'date-fns'
+import { useRouter } from 'next/router'
 import Theme from '@/styles/css/ts/theme'
 import Logo from '@/assets/images/logo.png'
 import { FiLinkedin } from 'react-icons/fi'
 import WaveContainter from '../wave-containter'
-import { FaFacebookF, FaYoutube } from 'react-icons/fa'
+import { ThemeService } from '@/services/_theme.service'
+import { FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa'
 import {
     Container,
     Content,
@@ -14,9 +17,6 @@ import {
     SocialMediaItem,
     SocialMediaContainer
 } from './styles'
-import { format } from 'date-fns'
-import { ThemeService } from '@/services/_theme.service'
-import { useRouter } from 'next/router'
 
 const Footer: React.FC = () => {
     const router = useRouter()
@@ -28,6 +28,11 @@ const Footer: React.FC = () => {
     }, [router.pathname])
 
     const socialMedia = [
+        {
+            title: 'Instagram',
+            icon: <FaInstagram />,
+            link: 'https://www.instagram.com/apit.aprendiz/'
+        },
         {
             title: 'Facebook',
             icon: <FaFacebookF />,
