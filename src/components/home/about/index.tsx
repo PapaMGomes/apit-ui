@@ -32,7 +32,7 @@ const About: React.FC = () => {
 
             <Content>
                 <ScrollAnimation animation="rollIn">
-                    <Image src={Logo} />
+                    <Image src={Logo} alt="APIT" />
                 </ScrollAnimation>
 
                 <Article>

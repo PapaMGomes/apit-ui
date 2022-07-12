@@ -10,7 +10,7 @@ const AboutApprentice: React.FC = () => {
                 <Title>O que é ser um jovem aprendiz ?</Title>
 
                 <Content>
-                    <Image src={Students} />
+                    <Image src={Students} alt="Aprendiz" />
 
                     <Text>
                         Ser um Jovem Aprendiz é aprimorar-se constantemente. São

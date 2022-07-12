@@ -30,7 +30,7 @@ const BecomeApprentice: React.FC = () => {
                         etapa teórica na APIT.
                     </Text>
 
-                    <Image src={Team} />
+                    <Image src={Team} alt="Aprendiz"/>
                 </Content>
 
                 <Text>
