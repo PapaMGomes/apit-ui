@@ -1,8 +1,6 @@
 import React from 'react'
-import { Text, Button } from './styles'
-import { scrollTo } from '@/helpers/scroll.helper'
+import { Text } from './styles'
 import { THEME_CONFIG } from '@/config/theme.config'
-import { DELEGATE } from '@/constants/delegate.constant'
 import Spotlight, { SpotlightTitle } from '@/components/common/spotlight'
 
 const ProgramSpotlight: React.FC = () => {
@@ -14,10 +12,6 @@ const ProgramSpotlight: React.FC = () => {
                 garantem a qualidade, controle, acompanhamento e a legalidade
                 dos estágios dos seus estudantes.
             </Text>
-
-            <Button onClick={() => scrollTo(DELEGATE.curriculumRegistration)}>
-                Cadastre seu currículo
-            </Button>
         </Spotlight>
     )
 }
